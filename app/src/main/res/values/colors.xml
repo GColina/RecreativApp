@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+
+
+
+    <!--TodoApp-->
+    <color name="background_card">#4D60D1</color>
+    <color name="background_disabled">#787878</color>
+    <color name="background_app">#4297FF</color>
+    <color name="background_text">#60A4F8</color>
+    <color name="subtitle_text">#FFC700</color>
+
+
+    <color name="cars_category">#00aaff</color>
+    <color name="billiards_category">#005c61</color>
+    <color name="balls_category">#8bff4d</color>
+    <color name="ChewingGums_category">#f7a1c6</color>
+    <color name="dianas_category">#e63746</color>
+    <color name="tablefootball_category">#0e5d20</color>
+    <color name="interactiveMachines_category">#ff8133</color>
+    <color name="sportsMachines_category">#ff0000</color>
+    <color name="others_category">#493f36</color>
+
+
+
+
+
+    <color name="todo_accent">#E91E63</color>
+</resources>

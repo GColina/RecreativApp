@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Recreativapp Cangree S.L</string>
+    <string name="title_list_machines">Listado de Maquinas</string>
+    <string name="categories">Categorías</string>
+    <string name="machines">Maquinas</string>
+
+
+
+    <string name="Others">Otros</string>
+    
+    
+    
+    
+    
+    <string name="proof_text">Prueba</string>
+
+</resources>

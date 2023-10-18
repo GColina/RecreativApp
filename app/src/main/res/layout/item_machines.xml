@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvCategories"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="#4D60D1"
+    app:cardCornerRadius="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+        <!--Esto es el titulo-->
+        <!--Ahora a por la parte de la derecha-->
+
+
+        <TextView
+            android:id="@+id/tvBarName"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="@color/background_text"
+            tools:text="Bar Alegria"
+            android:textColor="@color/subtitle_text"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivNotes"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/baseline_crisis_alert_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cvImage" />
+
+        <ImageView
+            android:id="@+id/ivAlertTime"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/baseline_check_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivLocation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/baseline_location_on_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivAlertTime"
+            app:layout_constraintStart_toEndOf="@+id/ivNotes" />
+
+        <TextView
+            android:id="@+id/tvCalendar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/background_text"
+            android:gravity="center"
+            android:text="|L|M|MC|J|V|S|D|"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cvImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvOwnerPhone" />
+
+        <TextView
+            android:id="@+id/tvOwnerName"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/background_text"
+            android:text="XianJuen Min"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvBarName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOwnerPhone"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/background_text"
+            android:text="666 666 666"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/tvBarName"
+            app:layout_constraintTop_toBottomOf="@+id/tvOwnerName" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvImage"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBarName">
+
+            <ImageView
+                android:id="@+id/ivMachine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/billar_random" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
