@@ -18,8 +18,6 @@ class MachinesViewHolder(view: View) : RecyclerView.ViewHolder(view){
     private val tvOwnerPhone:TextView = view.findViewById(R.id.tvOwnerPhone)
     private val cvCategories:CardView = view.findViewById(R.id.cvCategories)
 
-
-
     fun render(machine: Machine){
         tvBarName.text = machine.BarName
     }
