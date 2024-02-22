@@ -1,73 +1,40 @@
 package com.example.recreativappcangreesl
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.example.recreativappcangreesl.databinding.ActivityMainBinding
-import com.example.recreativappcangreesl.rvCategories.CategoriesAdapter
-import com.example.recreativappcangreesl.rvCategories.TypesCategoriesMachines
+import com.example.recreativappcangreesl.home.HomeActivity
+import com.example.recreativappcangreesl.login.LoginActivity
 import com.example.recreativappcangreesl.rvCategories.TypesCategoriesMachines.*
-import com.example.recreativappcangreesl.rvMachines.Machine
-import com.example.recreativappcangreesl.rvMachines.MachinesAdapter
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
-
-    private val machines = mutableListOf(
-        Machine("Bar Mangu", "Michel El Cangre", "666666666", Billiards),
-        Machine("Bar asd", "ads El Cangre", "666666666", Cars),
-        Machine("Bar kjbasd", "gsdfs El Cangre", "666666666", Dianas)
-    )
-
-
-    private val categories = listOf(
-        Balls,
-        Billiards,
-        Cars,
-        ChewingGums,
-        Dianas,
-        interactiveMachines,
-        Others,
-        sportsMachines,
-        TableFootball
-    )
-    private lateinit var categoriesAdapter: CategoriesAdapter
-    private lateinit var machinesAdapter: MachinesAdapter
-
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initComponent()
-        initUI()
-        initListeners()
     }
 
-    private fun initListeners() {
-        binding.fabAddMachine.setOnClickListener {
-
+    public override fun onStart() {
+        super.onStart()
+        auth = Firebase.auth
+        val currentUser = auth.currentUser
+        Log.d("GABRIEL", "===> CURRENT USER: ${currentUser?.uid}")
+        if (currentUser != null) {
+            val homeIntent = Intent(this, HomeActivity::class.java)
+            startActivity(homeIntent)
+        } else {
+            val loginIntent = Intent(this, LoginActivity::class.java)
+            startActivity(loginIntent)
         }
-    }
-
-    private fun initComponent() {
-        /*rvCategoriesMachines = findViewById(R.id.rvCategoriesMachines)*/
-        /*rvMachines = findViewById(R.id.rvMachines)*/
-
-    }
-
-
-    private fun initUI() {
-        categoriesAdapter = CategoriesAdapter(categories)
-        binding.rvCategoriesMachines.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvCategoriesMachines.adapter = categoriesAdapter
-
-
-        machinesAdapter = MachinesAdapter(machines)
-        binding.rvMachines.layoutManager = LinearLayoutManager(this)
-        binding.rvMachines.adapter = machinesAdapter
-
+        finish()
     }
 }

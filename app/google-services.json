@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "741638844993",
+    "firebase_url": "https://kr-mr-d1ac0-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "kr-mr-d1ac0",
+    "storage_bucket": "kr-mr-d1ac0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741638844993:android:74e005659bef7fdc848cc0",
+        "android_client_info": {
+          "package_name": "com.example.recreativappcangreesl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-IMU5HgBsJLRcXUBlsc07pJCnVb0WiS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
