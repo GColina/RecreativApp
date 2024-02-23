@@ -9,5 +9,22 @@
 
 
     <string name="proof_text">Prueba</string>
+    <string name="tvNameStore">Nombre del Bar</string>
+    <string name="etBarName">Nombre del Bar</string>
+    <string name="tvInstallationDate">Fecha de instalacion</string>
+    <string name="btnNow">Ahora</string>
+    <string name="tvOwnerName">Nombre del propietario</string>
+    <string name="tvOwnerPhone">Telefono del propietario</string>
+    <string name="etOwnerEmail">Email del propietario</string>
+    <string name="etEarnings">Ganancias</string>
+    <string name="title_date_Earnings">Fecha</string>
+    <string name="titleTotalEarnings">Bruto</string>
+    <string name="titleNetEarnings">Neto</string>
+    <string name="btnAddEarning">Añadir</string>
+    <string name="tittle_item_alert">La maquina de bolas esta casi vacia,
+        el billar no esta nivelado, la grua no esta bien calibrada,
+        la diana no registra el centro. </string>
+    <string name="tv_tittle_alerts">Alertas</string>
+
 
 </resources>
