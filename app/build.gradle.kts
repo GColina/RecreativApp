@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.recreativappcangreesl"
+    namespace = "com.gcolina.recreativappcangreesl"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.recreativappcangreesl"
+        applicationId = "com.gcolina.recreativappcangreesl"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

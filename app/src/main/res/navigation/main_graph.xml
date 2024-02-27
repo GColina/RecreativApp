@@ -6,6 +6,6 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.recreativappcangreesl.MainActivity"
+        android:name="com.gcolina.recreativappcangreesl.MainActivity"
         android:label="MainActivity" />
 </navigation>
