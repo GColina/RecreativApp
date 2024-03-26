@@ -9,12 +9,12 @@
 
 
     <string name="proof_text">Prueba</string>
-    <string name="tvNameStore">Nombre del Bar</string>
+    <string name="tvTitleNameStore">Nombre del Bar</string>
     <string name="etBarName">Nombre del Bar</string>
     <string name="tvInstallationDate">Fecha de instalacion</string>
     <string name="btnNow">Ahora</string>
-    <string name="tvOwnerName">Nombre del propietario</string>
-    <string name="tvOwnerPhone">Telefono del propietario</string>
+    <string name="tvTitleOwnerName">Nombre del propietario</string>
+    <string name="tvTitleOwnerPhone">Telefono del propietario</string>
     <string name="etOwnerEmail">Email del propietario</string>
     <string name="etEarnings">Ganancias</string>
     <string name="title_date_Earnings">Fecha</string>
@@ -25,6 +25,17 @@
         el billar no esta nivelado, la grua no esta bien calibrada,
         la diana no registra el centro. </string>
     <string name="tv_tittle_alerts">Alertas</string>
+    <string name="total_earning">Importe Bruto</string>
+    <string name="net_earnings">Importe Neto</string>
+    <string name="hint_et_alert">Describe la Alerta</string>
+    <string name="btn_save">Guardar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_uninstall">Desinstalar</string>
+    <string name="tv_image">Imagen</string>
+    <string name="tv_title_detail">Detalle</string>
+    <string name="btn_modifier">Modificar datos</string>
+    <string name="btn_add_alert">Añadir Alerta</string>
+    <string name="btn_add_earning">Añadir Ganancias</string>
 
 
 </resources>

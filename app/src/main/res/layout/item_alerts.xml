@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
@@ -23,7 +23,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:layout_weight="1"
-                android:text="Michel"
                 android:textSize="30sp" />
 
             <TextView
@@ -31,17 +30,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:layout_weight="1"
-                android:text="21-11-2024"
                 android:textSize="30sp" />
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tvItemAlert"
+            android:id="@+id/tvMessageAlert"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="@string/tittle_item_alert"
             android:textSize="20sp" />
     </LinearLayout>
 

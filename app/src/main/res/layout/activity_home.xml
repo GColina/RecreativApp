@@ -24,7 +24,7 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <TextView
+        <!--<TextView
             android:id="@+id/tittle_categories"
             style="@style/subtitle_list_machines"
             android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCategoriesMachines"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" />-->
 
 
         <TextView
@@ -48,7 +48,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvMachines"
+            android:id="@+id/rv_assets"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

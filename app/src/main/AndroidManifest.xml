@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true"/>
     <application
         android:name="com.gcolina.recreativappcangreesl.RVApplication"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecreativappCangreeSL">
         <activity
-            android:name="com.gcolina.recreativappcangreesl.detail.DetailActivity"
+            android:name="com.gcolina.recreativappcangreesl.detail.DetailAssetActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.gcolina.recreativappcangreesl.addAssets.AddAssetsActivity"
             android:exported="false" />
         <activity
             android:name="com.gcolina.recreativappcangreesl.MainActivity"

@@ -1,4 +1,4 @@
-package com.gcolina.recreativappcangreesl.detail
+package com.gcolina.recreativappcangreesl.addAssets.components
 
 import android.app.DatePickerDialog
 import android.app.Dialog
@@ -24,7 +24,6 @@ class DatePickerFragment(val listener: (day: Int, month: Int, year: Int) -> Unit
         val day = c.get(Calendar.DAY_OF_MONTH)
         val month = c.get(Calendar.MONTH)
         val year = c.get(Calendar.YEAR)
-
         val picker = DatePickerDialog(activity as Context, this, year, month, day)
         picker.datePicker.init(year, month, day, null)
         return picker

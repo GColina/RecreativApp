@@ -5,12 +5,11 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gcolina.recreativappcangreesl.addAssets.AddAssetsActivity
+import com.gcolina.recreativappcangreesl.data.model.AssetModel
 import com.gcolina.recreativappcangreesl.databinding.ActivityHomeBinding
-import com.gcolina.recreativappcangreesl.detail.DetailActivity
-import com.gcolina.recreativappcangreesl.home.RecyclerViews.rvCategories.CategoriesAdapter
-import com.gcolina.recreativappcangreesl.home.RecyclerViews.rvCategories.TypesCategoriesMachines
-import com.gcolina.recreativappcangreesl.home.RecyclerViews.rvMachines.Machine
-import com.gcolina.recreativappcangreesl.home.RecyclerViews.rvMachines.MachinesAdapter
+import com.gcolina.recreativappcangreesl.detail.DetailAssetActivity
+import com.gcolina.recreativappcangreesl.home.components.rvAssets.AssetsAdapter
 import com.gcolina.recreativappcangreesl.home.viewModel.HomeViewModel
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -18,27 +17,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
-    private val machines =
-        mutableListOf(
-            Machine("Bar Mangu", "Michel El Cangre", "666666666", TypesCategoriesMachines.Billiards),
-            Machine("Bar asd", "ads El Cangre", "666666666", TypesCategoriesMachines.Cars),
-            Machine("Bar kjbasd", "gsdfs El Cangre", "666666666", TypesCategoriesMachines.Dianas),
-        )
 
-    private val categories =
-        listOf(
-            TypesCategoriesMachines.Balls,
-            TypesCategoriesMachines.Billiards,
-            TypesCategoriesMachines.Cars,
-            TypesCategoriesMachines.ChewingGums,
-            TypesCategoriesMachines.Dianas,
-            TypesCategoriesMachines.interactiveMachines,
-            TypesCategoriesMachines.Others,
-            TypesCategoriesMachines.sportsMachines,
-            TypesCategoriesMachines.TableFootball,
-        )
-    private lateinit var categoriesAdapter: CategoriesAdapter
-    private lateinit var machinesAdapter: MachinesAdapter
+    companion object {
+        const val EXTRA_ASSETMODEL = "extra_asset_model"
+    }
+
+    private lateinit var assetAdapter: AssetsAdapter
     private lateinit var binding: ActivityHomeBinding
     private val viewModel: HomeViewModel by viewModels()
 
@@ -46,33 +30,46 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Load the assets here
-        val database = Firebase.database
-        // viewModel.getAssets(database)
-
-        initUI()
         initListeners()
+        intiObservers()
+        initUI()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getAsset()
+    }
+
+    private fun intiObservers() {
+        viewModel.assets.observe(this) {
+            assetAdapter.updateItems(it)
+        }
     }
 
     private fun initListeners() {
-        binding.fabAddMachine.setOnClickListener { navigateToDetail() }
+        binding.fabAddMachine.setOnClickListener { navigateToAddAsset() }
     }
 
     private fun initUI() {
-        categoriesAdapter = CategoriesAdapter(categories)
-        binding.rvCategoriesMachines.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvCategoriesMachines.adapter = categoriesAdapter
-
-        machinesAdapter = MachinesAdapter(machines)
-        binding.rvMachines.layoutManager = LinearLayoutManager(this)
-        binding.rvMachines.adapter = machinesAdapter
+        assetAdapter = AssetsAdapter { assetModel -> navigateToDetail(assetModel) }
+        binding.rvAssets.setHasFixedSize(true)
+        binding.rvAssets.layoutManager = LinearLayoutManager(this)
+        binding.rvAssets.adapter = assetAdapter
     }
 
-    private fun navigateToDetail() {
-        val intent = Intent(this, DetailActivity::class.java)
+    private fun getAsset() {
+        val database = Firebase.database
+        viewModel.getAssets(database)
+    }
+
+    private fun navigateToAddAsset() {
+        val intent = Intent(this, AddAssetsActivity::class.java)
         startActivity(intent)
     }
 
+    private fun navigateToDetail(assetModel: AssetModel) {
+        val intent = Intent(this, DetailAssetActivity::class.java)
+        intent.putExtra(EXTRA_ASSETMODEL, assetModel)
+        startActivity(intent)
+    }
 }

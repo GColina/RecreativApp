@@ -1,8 +1,11 @@
 package com.gcolina.recreativappcangreesl.data.model
 
+import android.os.Parcelable
 import com.google.gson.Gson
 import java.util.Calendar
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class AssetModel(
     val id: String? = null,
     val image: String? = null,
@@ -17,8 +20,8 @@ data class AssetModel(
     val ownerPhoneNumber: String,
     val ownerEmail: String? = null,
     val earnings: List<EarningsModel>,
-    val alerts: List<AlertModel>,
-) {
+    val alerts: List<AlertModel>
+) : Parcelable {
     fun toEntity(): AssetEntity {
         val assetId = this.id ?: Calendar.getInstance().timeInMillis.toString()
         val stringEarning: String? =
@@ -49,7 +52,7 @@ data class AssetModel(
             ownerPhoneNumber = this.ownerPhoneNumber,
             ownerEmail = this.ownerEmail,
             earnings = stringEarning,
-            alerts = stringAlerts,
+            alerts = stringAlerts
         )
     }
 }

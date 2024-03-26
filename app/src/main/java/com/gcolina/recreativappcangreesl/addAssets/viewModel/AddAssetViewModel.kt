@@ -1,7 +1,5 @@
-package com.gcolina.recreativappcangreesl.home.viewModel
+package com.gcolina.recreativappcangreesl.addAssets.viewModel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.gcolina.recreativappcangreesl.data.common.CustomScope
 import com.gcolina.recreativappcangreesl.data.common.observe
@@ -13,25 +11,21 @@ import javax.inject.Inject
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class HomeViewModel
+class AddAssetViewModel
 @Inject
 constructor(
     private val assetsRepository: AssetsRepository,
     private val scope: CustomScope
 ) : ViewModel() {
-    private val _assets: MutableLiveData<List<AssetModel>> = MutableLiveData(emptyList())
-    val assets: LiveData<List<AssetModel>> = _assets
-
-    fun getAssets(database: FirebaseDatabase) {
+    fun saveAssets(database: FirebaseDatabase, asset: AssetModel) {
         scope.launch {
-            assetsRepository.getAssets(database).observe(
+            assetsRepository.saveAsset(database, asset).observe(
                 onSuccess = {
-                    println("&&----esta bien HomeView $it")
-                    _assets.value = it
+                    println("&&----esta bien $asset ")
                 },
                 onError = {
-                    println("&&---- No esta bien HomeView $it")
-                    // GOT ERROR
+                    println("&&---- No esta bien $it")
+                    // SAVING ASSET ERROR
                 }
             )
         }
